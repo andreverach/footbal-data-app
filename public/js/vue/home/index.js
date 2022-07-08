@@ -35,11 +35,8 @@ var competitions_list = new Vue({
         .catch(e => {
           this.competitionsLoading = false;
           this.competitions = [];
-          console.log(e);
-          console.log(e.response);
         });
-      }catch(error){
-        console.log('Errorr Catch: ', error);
+      }catch(error){        
       }
     },
     show(competition){

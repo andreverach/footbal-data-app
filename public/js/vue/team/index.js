@@ -36,11 +36,9 @@ var competitions_list = new Vue({
         .catch(e => {
           this.teamLoading = false;
           this.team = null;
-          console.log(e);
-          console.log(e.response);
         });
       }catch(error){
-        console.log('Errorr Catch: ', error);
+        
       }
     },
     async show(player){
@@ -49,17 +47,15 @@ var competitions_list = new Vue({
         await axios.get(this.playerUrl + '/' + player.id, this.config)
         .then(r => {
           if(r.data.status){
-            alert('El jugador ha sido seleccionado para tu equipo!');
+            alert('Jugador agregado, tienes ' + r.data.data.length + ' jugadores en tu equipo.');
           }else{
             alert(r.data.message);
           }
         })
         .catch(e => {
-          console.log(e);
-          console.log(e.response);
         });
       }catch(error){
-        console.log('Errorr Catch: ', error);
+        
       }
     },
   }

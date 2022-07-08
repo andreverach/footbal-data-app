@@ -33,8 +33,6 @@ var competitions_list = new Vue({
         .catch(e => {
           this.playersLoading = false;
           this.players = [];
-          console.log(e);
-          console.log(e.response);
         });
       }catch(error){
         console.log('Errorr Catch: ', error);

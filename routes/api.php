@@ -10,7 +10,8 @@ use App\Http\Controllers\Api\PlayerController as PlayerCtrl;
 // competitions
 Route::get('competitions', [CompetitionCtrl::class, 'index'])
   ->middleware('throttle: 10, 60');
-Route::get('competitions/{competitionId}', [CompetitionCtrl::class, 'view']);
+Route::get('competitions/{competitionId}', [CompetitionCtrl::class, 'view'])
+  ->middleware('throttle: 10, 60');
 
 // teams
 Route::get('team', [TeamCtrl::class, 'index']);
